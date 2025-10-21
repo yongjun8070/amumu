@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>심해 탐험 - Deep Sea Explorer</title>
+    <title>심해 탐험 3D - Deep Sea Explorer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,27 +37,36 @@
 
             <div id="zone-indicator" class="zone-indicator">표층 - Epipelagic Zone</div>
 
+            <div class="crosshair">+</div>
+
             <div id="discovered" class="discovered-panel">
                 <h3>발견한 생물: <span id="creature-count">0</span></h3>
+            </div>
+
+            <div class="controls-hint">
+                <p>마우스: 둘러보기 | WASD: 이동 | Space: 상승 | Shift: 하강 | L: 조명 | ESC: 수면</p>
             </div>
         </div>
 
         <!-- 시작 화면 -->
         <div id="start-screen" class="overlay">
             <div class="start-content">
-                <h1>심해 탐험</h1>
+                <h1>심해 탐험 3D</h1>
                 <h2>Deep Sea Explorer</h2>
                 <div class="instructions">
                     <p><strong>조작법:</strong></p>
-                    <p>← → 좌우 이동</p>
-                    <p>↑ 상승 / ↓ 하강</p>
-                    <p>SPACE: 조명 토글</p>
-                    <p>ESC: 수면으로 귀환</p>
+                    <p>마우스 - 360도 둘러보기</p>
+                    <p>W/A/S/D - 전후좌우 이동</p>
+                    <p>SPACE - 상승</p>
+                    <p>SHIFT - 하강</p>
+                    <p>L - 조명 토글</p>
+                    <p>ESC - 수면으로 귀환</p>
                     <br>
                     <p><strong>미션:</strong></p>
-                    <p>심해 깊숙이 내려가 다양한 생물과</p>
-                    <p>고대 유적을 발견하세요!</p>
-                    <p>조심하세요... 깊은 곳에는 무언가가 있습니다.</p>
+                    <p>1인칭 시점으로 심해를 탐험하세요!</p>
+                    <p>마우스를 움직여 주변을 둘러보고</p>
+                    <p>다양한 생물과 고대 유적을 발견하세요.</p>
+                    <p>깊은 곳에는 무언가가 숨어있습니다...</p>
                 </div>
                 <button id="start-button" class="game-button">탐험 시작</button>
             </div>
@@ -66,7 +75,7 @@
         <!-- 게임 오버 화면 -->
         <div id="gameover-screen" class="overlay hidden">
             <div class="gameover-content">
-                <h1 id="gameover-title">잠수정 손상!</h1>
+                <h1 id="gameover-title">탐험 종료</h1>
                 <p id="gameover-message">최대 깊이: <span id="max-depth">0</span>m</p>
                 <p>발견한 생물: <span id="final-creature-count">0</span>종</p>
                 <button id="restart-button" class="game-button">다시 탐험</button>
@@ -74,6 +83,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="game.js"></script>
 </body>
 </html>
